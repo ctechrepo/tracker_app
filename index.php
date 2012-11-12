@@ -1,5 +1,12 @@
 <?php
 
+// Check if the install folder exists - if so then show the installer app
+if (is_dir(dirname(__FILE__).'/install') == true)
+{
+	header('Location: install');
+	exit;
+}
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -19,6 +26,7 @@
  *
  */
 	define('ENVIRONMENT', 'development');
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -28,23 +36,38 @@
  * By default development will show errors but testing and live will hide them.
  */
 
-if (defined('ENVIRONMENT'))
-{
 	switch (ENVIRONMENT)
 	{
 		case 'development':
 			error_reporting(E_ALL);
-		break;
-	
+			if (!ini_get('display_errors'))
+			{
+				ini_set('display_errors', 1);
+			}
+			break;
+
 		case 'testing':
 		case 'production':
 			error_reporting(0);
-		break;
+			break;
 
 		default:
 			exit('The application environment is not set correctly.');
 	}
-}
+
+/*
+|---------------------------------------------------------------
+| DEFAULT INI SETTINGS
+|---------------------------------------------------------------
+|
+| Necessary settings for a higher compatibility. Inspired by PyroCMS code.
+|
+*/
+	// PHP 5.3 requires this
+	if(ini_get('date.timezone') == '')
+	{
+		date_default_timezone_set('GMT');
+	}
 
 /*
  *---------------------------------------------------------------
@@ -56,7 +79,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = 'system';
+	$system_path = "bonfire/codeigniter";
 
 /*
  *---------------------------------------------------------------
@@ -72,7 +95,23 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = 'application';
+	$application_folder = "bonfire/application";
+
+/*
+ *---------------------------------------------------------------
+ * VIEW FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want to move the view folder out of the application
+ * folder set the path to the folder here. The folder can be renamed
+ * and relocated anywhere on your server. If blank, it will default
+ * to the standard location inside your application folder.  If you
+ * do move this, use the full server path to this folder
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$view_folder = '';
 
 /*
  * --------------------------------------------------------------------
@@ -98,7 +137,7 @@ if (defined('ENVIRONMENT'))
 	// if your controller is not in a sub-folder within the "controllers" folder
 	// $routing['directory'] = '';
 
-	// The controller class file name.  Example:  Mycontroller
+	// The controller class file name.  Example:  Mycontroller.php
 	// $routing['controller'] = '';
 
 	// The controller function you wish to be called.
@@ -127,6 +166,9 @@ if (defined('ENVIRONMENT'))
 // --------------------------------------------------------------------
 // END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
 // --------------------------------------------------------------------
+
+
+
 
 /*
  * ---------------------------------------------------------------
@@ -190,6 +232,22 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
+
+	// The path to the "views" folder
+	if (is_dir($view_folder))
+	{
+		define ('VIEWPATH', $view_folder .'/');
+	}
+	else
+	{
+		if ( ! is_dir(APPPATH.'views/'))
+		{
+			exit("Your view folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define ('VIEWPATH', APPPATH.'views/' );
+	}
+
 
 /*
  * --------------------------------------------------------------------
