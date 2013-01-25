@@ -42,11 +42,11 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
+$db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['port']     = '3306';
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['database'] = 'bonfire_jiujitsu';
+$db['default']['port'] = '3306';
+$db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = 'bf_';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
