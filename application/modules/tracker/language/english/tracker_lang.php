@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['tracker_manage']			= 'Manage Tracker';
+$lang['tracker_edit']				= 'Edit';
+$lang['tracker_true']				= 'True';
+$lang['tracker_false']				= 'False';
+$lang['tracker_create']			= 'Create';
+$lang['tracker_list']				= 'List';
+$lang['tracker_new']				= 'New';
+$lang['tracker_edit_text']			= 'Edit this to suit your needs';
+$lang['tracker_no_records']			= 'There aren\'t any tracker in the system.';
+$lang['tracker_create_new']			= 'Create a new Tracker.';
+$lang['tracker_create_success']			= 'Tracker successfully created.';
+$lang['tracker_create_failure']			= 'There was a problem creating the tracker: ';
+$lang['tracker_create_new_button']			= 'Create New Tracker';
+$lang['tracker_invalid_id']			= 'Invalid Tracker ID.';
+$lang['tracker_edit_success']			= 'Tracker successfully saved.';
+$lang['tracker_edit_failure']			= 'There was a problem saving the tracker: ';
+$lang['tracker_delete_success']			= 'record(s) successfully deleted.';
+$lang['tracker_delete_failure']			= 'We could not delete the record: ';
+$lang['tracker_delete_error']			= 'You have not selected any records to delete.';
+$lang['tracker_actions']			= 'Actions';
+$lang['tracker_cancel']			= 'Cancel';
+$lang['tracker_delete_record']			= 'Delete this Tracker';
+$lang['tracker_delete_confirm']			= 'Are you sure you want to delete this tracker?';
+$lang['tracker_edit_heading']			= 'Edit Tracker';
+
+// Activities
+$lang['tracker_act_create_record']			= 'Created record with ID';
+$lang['tracker_act_edit_record']			= 'Updated record with ID';
+$lang['tracker_act_delete_record']			= 'Deleted record with ID';

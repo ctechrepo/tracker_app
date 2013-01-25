@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['vimeo_manage']			= 'Manage Vimeo';
+$lang['vimeo_edit']				= 'Edit';
+$lang['vimeo_true']				= 'True';
+$lang['vimeo_false']				= 'False';
+$lang['vimeo_create']			= 'Create';
+$lang['vimeo_list']				= 'List';
+$lang['vimeo_new']				= 'New';
+$lang['vimeo_edit_text']			= 'Edit this to suit your needs';
+$lang['vimeo_no_records']			= 'There aren\'t any vimeo in the system.';
+$lang['vimeo_create_new']			= 'Create a new Vimeo.';
+$lang['vimeo_create_success']			= 'Vimeo successfully created.';
+$lang['vimeo_create_failure']			= 'There was a problem creating the vimeo: ';
+$lang['vimeo_create_new_button']			= 'Create New Vimeo';
+$lang['vimeo_invalid_id']			= 'Invalid Vimeo ID.';
+$lang['vimeo_edit_success']			= 'Vimeo successfully saved.';
+$lang['vimeo_edit_failure']			= 'There was a problem saving the vimeo: ';
+$lang['vimeo_delete_success']			= 'record(s) successfully deleted.';
+$lang['vimeo_delete_failure']			= 'We could not delete the record: ';
+$lang['vimeo_delete_error']			= 'You have not selected any records to delete.';
+$lang['vimeo_actions']			= 'Actions';
+$lang['vimeo_cancel']			= 'Cancel';
+$lang['vimeo_delete_record']			= 'Delete this Vimeo';
+$lang['vimeo_delete_confirm']			= 'Are you sure you want to delete this vimeo?';
+$lang['vimeo_edit_heading']			= 'Edit Vimeo';
+
+// Activities
+$lang['vimeo_act_create_record']			= 'Created record with ID';
+$lang['vimeo_act_edit_record']			= 'Updated record with ID';
+$lang['vimeo_act_delete_record']			= 'Deleted record with ID';
