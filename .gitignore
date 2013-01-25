@@ -56,3 +56,8 @@ public/install/installed.txt
 
 # Ignore the config files
 application/config/*
+
+# Ignore .htaccess
+public/.htaccess
+public/1.htaccess
+public/test.htaccess
