@@ -53,3 +53,6 @@ bonfire/.ideas
 
 # Ignore the installed.txt file
 public/install/installed.txt
+
+# Ignore the config files
+application/config/*
