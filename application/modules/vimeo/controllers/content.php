@@ -9,7 +9,7 @@ class content extends Admin_Controller {
 	{
 		parent::__construct();
 
-		$this->auth->restrict('Vimeo.Content.View');
+		$this->auth->restrict('Vimeo.Content.Manage');
 		$this->lang->load('vimeo');
 		
 		Template::set_block('sub_nav', 'content/_sub_nav');

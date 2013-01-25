@@ -9,7 +9,7 @@ class content extends Admin_Controller {
 	{
 		parent::__construct();
 
-		$this->auth->restrict('Tracker.Content.View');
+		//$this->auth->restrict('Tracker.Content.View');
 		$this->lang->load('tracker');
 		
 		Template::set_block('sub_nav', 'content/_sub_nav');
