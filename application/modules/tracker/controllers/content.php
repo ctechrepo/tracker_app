@@ -9,7 +9,7 @@ class content extends Admin_Controller {
 	{
 		parent::__construct();
 
-		//$this->auth->restrict('Tracker.Content.View');
+		$this->auth->restrict('Tracker.Content.View');//Bonfire automatically enforces this restriction but that might change
 		$this->lang->load('tracker');
 		
 		Template::set_block('sub_nav', 'content/_sub_nav');
@@ -28,6 +28,7 @@ class content extends Admin_Controller {
 	{
 
 		Template::set('toolbar_title', 'Manage Tracker');
+
 		Template::render();
 	}
 
