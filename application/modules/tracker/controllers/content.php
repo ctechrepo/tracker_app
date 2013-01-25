@@ -35,7 +35,14 @@ class content extends Admin_Controller {
 	//--------------------------------------------------------------------
 
 
+    public function categories()
+    {
+        $this->load->model('category');
 
+        Template::set('categories',$this->category->list_all());
+
+        Template::render();
+    }
 	/*
 		Method: create()
 
@@ -62,13 +69,13 @@ class content extends Admin_Controller {
 	*/
 	public function edit()
 	{
-		$id = $this->uri->segment(5);
+		/*$id = $this->uri->segment(5);
 
 		if (empty($id))
 		{
 			Template::set_message(lang('tracker_invalid_id'), 'error');
 			redirect(SITE_AREA .'/content/tracker');
-		}
+		}*/
 
 		Assets::add_module_js('tracker', 'tracker.js');
 
