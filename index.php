@@ -3,8 +3,8 @@
 // Check if the install folder exists - if so then show the installer app
 if (is_dir(dirname(__FILE__).'/install') == true)
 {
-	header('Location: install');
-	exit;
+	//header('Location: install');
+	//exit;
 }
 
 /*

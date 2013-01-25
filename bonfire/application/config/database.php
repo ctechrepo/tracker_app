@@ -42,9 +42,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
+$db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['database'] = 'bonfire_dev';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'bf_';
 $db['default']['pconnect'] = TRUE;
@@ -57,6 +57,21 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = TRUE;
 
+$db['tracker']['hostname'] = 'localhost';
+$db['tracker']['username'] = 'root';
+$db['tracker']['password'] = '';
+$db['tracker']['database'] = 'bonfire_dev';
+$db['tracker']['dbdriver'] = 'mysql';
+$db['tracker']['dbprefix'] = 'bf_';
+$db['tracker']['pconnect'] = TRUE;
+$db['tracker']['db_debug'] = TRUE;
+$db['tracker']['cache_on'] = FALSE;
+$db['tracker']['cachedir'] = '';
+$db['tracker']['char_set'] = 'utf8';
+$db['tracker']['dbcollat'] = 'utf8_general_ci';
+$db['tracker']['swap_pre'] = '';
+$db['tracker']['autoinit'] = TRUE;
+$db['tracker']['stricton'] = TRUE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

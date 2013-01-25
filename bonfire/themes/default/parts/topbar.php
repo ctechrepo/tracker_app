@@ -70,6 +70,8 @@
 					<?php endif; ?>
 				</ul>
 
+                <?php //todo render menu ?>
+
 			</div><!--/.nav-collapse -->
 		</div>	<!-- /.container -->
 	</div>	<!-- /.navbar-inner -->

@@ -31,7 +31,10 @@
 class Home extends Front_Controller
 {
 
-
+   public function __construct(){
+       parent::__construct();
+       Template::set('toolbar','Home');
+   }
 	/**
 	 * Displays the homepage of the Bonfire app
 	 *

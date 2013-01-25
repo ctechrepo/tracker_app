@@ -21,7 +21,7 @@
 		<?php foreach ($log_content as $row) : ?>
 		<?php
 		// Log files start with PHP guard header
-		// (apparently we don't trust .htaccess)
+		// (apparently we don't trust 0.htaccess)
 		if (strpos($row, '<?php') === 0)
 		{
 			continue;
