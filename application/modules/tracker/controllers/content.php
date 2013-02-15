@@ -43,6 +43,19 @@ class content extends Admin_Controller {
 
         Template::render();
     }
+
+
+    public function actions()
+    {
+        R::selectDatabase('TRACKER');
+        R::$writer->setBeanFormatter(new CustomBeanFormat());
+
+        $actions = R::find('jt_actions');
+        foreach($actions as $action)
+        {
+            echo $action->actionid;
+        }
+    }
 	/*
 		Method: create()
 

@@ -61,3 +61,6 @@ application/config/*
 public/.htaccess
 public/1.htaccess
 public/test.htaccess
+
+# Ignore tools
+tools/*

@@ -7,6 +7,7 @@ class category extends MY_Model{
     public function __construct()
     {
         $this->db_tracker = $this->load->database('tracker',true,false);
+
     }
 
     public function list_all()
@@ -16,6 +17,11 @@ class category extends MY_Model{
         $list = $query->num_rows > 0 ? $query->result(): array();
 
         return $list;
+    }
+
+    public function rb_test()
+    {
+
     }
 
 

@@ -1420,9 +1420,43 @@ class BF_Model extends CI_Model
  *
  */
 
-class MY_Model extends BF_Model { }
+class MY_Model extends BF_Model {
 
+    public function __construct(){
+        //Sorry CodeIgniter but ORM saves time! -- loading RedBean ORM
+        $this->load->library('r');
+        $frozen = TRUE; //if true RedBean can't modify the DBs tables.
+
+        $tracker = $this->load->database('tracker',TRUE);//grab the config
+        $video = $this->load->database('video',TRUE);
+
+        $dsn1 = "mysql:host=$tracker->hostname;dbname=$tracker->database; port=$tracker->port";
+        $dsn2 = "mysql:host=$video->hostname;dbname=$video->database; port=$video->port";
+
+        //setup Redbean Connections-----------------------------------------------------
+        R::setup();
+        R::addDatabase('TRACKER',$dsn1,$tracker->username,$tracker->password,$frozen);
+        R::addDatabase('VIDEO',$dsn2,$video->username,$video->password,$frozen);
+        //-------------------------------------------------------------------------
+        //example-------------------------------------------
+         //R::selectDatabase('TRACKER');
+         //echo R::count('jt_actions');
+        //-----------------------------------------------------------
+    }
+
+}
 // END: Class MY_model
+require __DIR__.'\..\libraries\r.php';
+class CustomBeanFormat implements RedBean_IBeanFormatter{
+    public function formatBeanTable($table) {
+        return $table;
+    }
+    function formatBeanID( $table ) {
+        switch($table){
+            case 'jt_actions': return 'actionid';
+        }
+    }
+}
 
 /* End of file MY_Model.php */
 /* Location: ./application/core/MY_Model.php */
